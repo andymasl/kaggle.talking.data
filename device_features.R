@@ -22,7 +22,8 @@ test.set <- read_csv("./rawdata/gender_age_test.csv", col_types = "c")
 ################################################################################
 device.events <- device.events %>% 
     distinct(event_id, device_id) %>% 
-    select(-timestamp, -longitude, -latitude)
+    select(event_id, device_id)  
+  #select(-timestamp, -longitude, -latitude)
 
 app.events <- app.events %>% 
     select(-is_installed, -is_active) %>% 
